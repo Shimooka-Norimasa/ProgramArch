@@ -1,0 +1,31 @@
+@* 入出庫の操作パネル。在庫数を直接書き換えず、Action を Dispatch するだけ *@
+@inherits FluxorComponent
+@inject IState<InventoryState> State
+@inject IDispatcher Dispatcher
+
+<div class="panel">
+    @if (State.Value.SelectedProduct is { } selected)
+    {
+        <span>選択中: @selected.Name（在庫 @selected.Stock）</span>
+    }
+    else
+    {
+        <span>一覧から商品を選択してください</span>
+    }
+
+    <input type="number" min="1" @bind="quantity" />
+    <button disabled="@(State.Value.SelectedProduct is null)"
+            @onclick="() => Dispatcher.Dispatch(new ReceiveStockAction(quantity))">入庫</button>
+    <button disabled="@(State.Value.SelectedProduct is null)"
+            @onclick="() => Dispatcher.Dispatch(new ShipStockAction(quantity))">出庫</button>
+</div>
+
+@if (State.Value.Message is { } message)
+{
+    <p class="@(State.Value.IsError ? "error" : "message")">@message</p>
+}
+
+@code {
+    // 入力途中の値はこの部品だけの一時的な状態なので、Store には入れない
+    private int quantity = 1;
+}

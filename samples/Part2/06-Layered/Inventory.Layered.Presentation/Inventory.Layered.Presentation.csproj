@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+  </PropertyGroup>
+
+  <!-- プレゼンテーション層 → 業務ロジック層 -->
+  <ItemGroup>
+    <ProjectReference Include="..\Inventory.Layered.Business\Inventory.Layered.Business.csproj" />
+  </ItemGroup>
+
+</Project>

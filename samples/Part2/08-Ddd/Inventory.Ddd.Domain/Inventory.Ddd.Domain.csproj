@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    第7章のクリーンアーキテクチャの「Domain 層」を DDD の考え方で作り直したもの。
+    Application / Infrastructure / WebApi の構成は第7章と同じなので、この章では Domain に集中する。
+  -->
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+  </PropertyGroup>
+
+</Project>

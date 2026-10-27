@@ -1,0 +1,5 @@
+<Application x:Class="Inventory.Mvvm.Wpf.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- StartupUri は使わず、App.xaml.cs で ViewModel を渡してから画面を開く -->
+</Application>

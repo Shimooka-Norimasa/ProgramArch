@@ -1,0 +1,8 @@
+@* Fluxor の Store を初期化する。対話モードで動く部品の中に置く必要がある *@
+<Fluxor.Blazor.Web.StoreInitializer />
+
+<Router AppAssembly="typeof(Program).Assembly">
+    <Found Context="routeData">
+        <RouteView RouteData="routeData" DefaultLayout="typeof(MainLayout)" />
+    </Found>
+</Router>

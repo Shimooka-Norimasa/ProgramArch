@@ -1,0 +1,29 @@
+@* 在庫一覧。状態は Store から読むだけで、行のクリックは Action として通知する *@
+@inherits FluxorComponent
+@inject IState<InventoryState> State
+@inject IDispatcher Dispatcher
+
+<table>
+    <thead>
+        <tr>
+            <th>商品コード</th>
+            <th>商品名</th>
+            <th>在庫数</th>
+            <th>発注点</th>
+            <th>状態</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in State.Value.Products)
+        {
+            <tr class="@(product.Code == State.Value.SelectedCode ? "selected" : null)"
+                @onclick="() => Dispatcher.Dispatch(new SelectProductAction(product.Code))">
+                <td>@product.Code</td>
+                <td>@product.Name</td>
+                <td>@product.Stock</td>
+                <td>@product.ReorderPoint</td>
+                <td class="reorder">@(product.NeedsReorder ? "要発注" : "")</td>
+            </tr>
+        }
+    </tbody>
+</table>

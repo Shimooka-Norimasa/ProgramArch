@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+  </PropertyGroup>
+
+  <!-- Application → Domain（内側だけを参照する。EF Core も ASP.NET Core も参照しない） -->
+  <ItemGroup>
+    <ProjectReference Include="..\Inventory.Clean.Domain\Inventory.Clean.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

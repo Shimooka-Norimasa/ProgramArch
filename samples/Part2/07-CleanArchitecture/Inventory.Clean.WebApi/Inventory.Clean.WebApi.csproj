@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+  </PropertyGroup>
+
+  <!--
+    WebApi はアプリの「組み立て役（Composition Root）」なので Infrastructure も参照する。
+    ただしエンドポイントのコードが使うのは Application のユースケースだけ。
+  -->
+  <ItemGroup>
+    <ProjectReference Include="..\Inventory.Clean.Application\Inventory.Clean.Application.csproj" />
+    <ProjectReference Include="..\Inventory.Clean.Infrastructure\Inventory.Clean.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

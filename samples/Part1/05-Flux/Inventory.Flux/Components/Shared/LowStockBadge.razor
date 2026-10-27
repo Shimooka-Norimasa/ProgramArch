@@ -1,0 +1,12 @@
+@* ヘッダーに表示する「要発注」件数。一覧とは別の部品だが、同じ Store を参照している *@
+@inherits FluxorComponent
+@inject IState<InventoryState> State
+
+@if (LowStockCount > 0)
+{
+    <span class="badge">要発注 @LowStockCount 件</span>
+}
+
+@code {
+    private int LowStockCount => State.Value.Products.Count(p => p.NeedsReorder);
+}

@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="10.0.14" />
+  </ItemGroup>
+
+  <!-- Infrastructure → Application（内側のインターフェースを実装するために参照する） -->
+  <ItemGroup>
+    <ProjectReference Include="..\Inventory.Clean.Application\Inventory.Clean.Application.csproj" />
+  </ItemGroup>
+
+</Project>

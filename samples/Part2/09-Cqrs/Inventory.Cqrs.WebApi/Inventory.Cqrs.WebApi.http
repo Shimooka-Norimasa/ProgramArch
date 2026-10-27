@@ -1,0 +1,20 @@
+# ポート番号は起動時にコンソールへ表示されるものに合わせてください。
+@baseUrl = http://localhost:5000
+
+### Query: 商品一覧
+GET {{baseUrl}}/products
+
+### Query: 発注レポート
+GET {{baseUrl}}/reports/reorder
+
+### Command: 入庫（204 が返る）
+POST {{baseUrl}}/products/P-004/receive
+Content-Type: application/json
+
+{ "quantity": 30 }
+
+### Command: 出庫
+POST {{baseUrl}}/products/P-001/ship
+Content-Type: application/json
+
+{ "quantity": 80 }

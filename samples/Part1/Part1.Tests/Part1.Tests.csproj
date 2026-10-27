@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.10.0" />
+    <PackageReference Include="xunit" Version="2.9.3" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="3.1.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Xunit" />
+  </ItemGroup>
+
+  <!-- 画面（WinForms / WPF）のプロジェクトは参照しない。画面なしでテストできることがポイント -->
+  <ItemGroup>
+    <ProjectReference Include="..\02-Mvp\Inventory.Mvp.Core\Inventory.Mvp.Core.csproj" />
+    <ProjectReference Include="..\03-Mvvm\Inventory.Mvvm.Core\Inventory.Mvvm.Core.csproj" />
+    <ProjectReference Include="..\04-Mvu\Inventory.Mvu\Inventory.Mvu.csproj" />
+  </ItemGroup>
+
+</Project>

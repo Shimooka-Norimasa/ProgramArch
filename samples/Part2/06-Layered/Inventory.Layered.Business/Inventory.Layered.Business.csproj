@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+  </PropertyGroup>
+
+  <!-- 業務ロジック層 → データアクセス層 という上から下への参照 -->
+  <ItemGroup>
+    <ProjectReference Include="..\Inventory.Layered.DataAccess\Inventory.Layered.DataAccess.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,54 @@
+@* View: Controller から渡された Model を表示するだけ。計算や判定は書かない。 *@
+@model IReadOnlyList<Product>
+@{
+    ViewData["Title"] = "在庫一覧";
+}
+
+<h1>在庫一覧</h1>
+
+@if (TempData["Message"] is string message)
+{
+    <p class="message">@message</p>
+}
+@if (TempData["Error"] is string error)
+{
+    <p class="error">@error</p>
+}
+
+<table>
+    <thead>
+        <tr>
+            <th>商品コード</th>
+            <th>商品名</th>
+            <th>在庫数</th>
+            <th>発注点</th>
+            <th>状態</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Code</td>
+                <td>@product.Name</td>
+                <td>@product.Stock</td>
+                <td>@product.ReorderPoint</td>
+                <td class="reorder">@(product.NeedsReorder ? "要発注" : "")</td>
+                <td>
+                    @* asp-action を使うと、なりすまし防止用のトークンが自動でフォームに入る *@
+                    <form method="post" asp-action="Receive" class="inline">
+                        <input type="hidden" name="code" value="@product.Code" />
+                        <input type="number" name="quantity" min="1" value="1" />
+                        <button type="submit">入庫</button>
+                    </form>
+                    <form method="post" asp-action="Ship" class="inline">
+                        <input type="hidden" name="code" value="@product.Code" />
+                        <input type="number" name="quantity" min="1" value="1" />
+                        <button type="submit">出庫</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

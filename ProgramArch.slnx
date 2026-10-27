@@ -1,0 +1,25 @@
+<Solution>
+  <Folder Name="/Part1/">
+    <Project Path="samples/Part1/01-Mvc/Inventory.Mvc/Inventory.Mvc.csproj" />
+    <Project Path="samples/Part1/02-Mvp/Inventory.Mvp.Core/Inventory.Mvp.Core.csproj" />
+    <Project Path="samples/Part1/02-Mvp/Inventory.Mvp.WinForms/Inventory.Mvp.WinForms.csproj" />
+    <Project Path="samples/Part1/03-Mvvm/Inventory.Mvvm.Core/Inventory.Mvvm.Core.csproj" />
+    <Project Path="samples/Part1/03-Mvvm/Inventory.Mvvm.Wpf/Inventory.Mvvm.Wpf.csproj" />
+    <Project Path="samples/Part1/04-Mvu/Inventory.Mvu/Inventory.Mvu.csproj" />
+    <Project Path="samples/Part1/05-Flux/Inventory.Flux/Inventory.Flux.csproj" />
+    <Project Path="samples/Part1/Part1.Tests/Part1.Tests.csproj" />
+  </Folder>
+  <Folder Name="/Part2/">
+    <Project Path="samples/Part2/06-Layered/Inventory.Layered.DataAccess/Inventory.Layered.DataAccess.csproj" />
+    <Project Path="samples/Part2/06-Layered/Inventory.Layered.Business/Inventory.Layered.Business.csproj" />
+    <Project Path="samples/Part2/06-Layered/Inventory.Layered.Presentation/Inventory.Layered.Presentation.csproj" />
+    <Project Path="samples/Part2/07-CleanArchitecture/Inventory.Clean.Domain/Inventory.Clean.Domain.csproj" />
+    <Project Path="samples/Part2/07-CleanArchitecture/Inventory.Clean.Application/Inventory.Clean.Application.csproj" />
+    <Project Path="samples/Part2/07-CleanArchitecture/Inventory.Clean.Infrastructure/Inventory.Clean.Infrastructure.csproj" />
+    <Project Path="samples/Part2/07-CleanArchitecture/Inventory.Clean.WebApi/Inventory.Clean.WebApi.csproj" />
+    <Project Path="samples/Part2/08-Ddd/Inventory.Ddd.Domain/Inventory.Ddd.Domain.csproj" />
+    <Project Path="samples/Part2/09-Cqrs/Inventory.Cqrs.WebApi/Inventory.Cqrs.WebApi.csproj" />
+    <Project Path="samples/Part2/10-VerticalSlice/Inventory.VerticalSlice.WebApi/Inventory.VerticalSlice.WebApi.csproj" />
+    <Project Path="samples/Part2/Part2.Tests/Part2.Tests.csproj" />
+  </Folder>
+</Solution>

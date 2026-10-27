@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="/" />
+    <title>在庫管理（Flux）</title>
+    <style>
+        body { font-family: sans-serif; margin: 24px; }
+        header { display: flex; gap: 16px; align-items: center; border-bottom: 1px solid #ccc; margin-bottom: 16px; }
+        table { border-collapse: collapse; }
+        th, td { border: 1px solid #ccc; padding: 4px 8px; }
+        tr.selected { background: #ddf4ff; }
+        tbody tr { cursor: pointer; }
+        input[type=number] { width: 64px; }
+        .panel { margin-top: 16px; display: flex; gap: 8px; align-items: center; }
+        .message { color: #1a7f37; }
+        .error, .reorder { color: #cf222e; }
+        .badge { background: #cf222e; color: white; border-radius: 12px; padding: 2px 10px; }
+    </style>
+    <HeadOutlet @rendermode="new InteractiveServerRenderMode(prerender: false)" />
+</head>
+<body>
+    <Routes @rendermode="new InteractiveServerRenderMode(prerender: false)" />
+    <script src="_framework/blazor.web.js"></script>
+</body>
+</html>
